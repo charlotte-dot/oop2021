@@ -1,14 +1,9 @@
 package com.company;
 
-
-import org.json.JSONObject;
-import org.json.JSONTokener;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Currency;
 
 public class APIConnector {
     public static String date = "2021-02-02";
@@ -33,30 +28,5 @@ public class APIConnector {
         } else {
             throw new Exception("Error in API Call");
         }
-    }
-
-    public void getCurrency(String currencyString){
-        JSONTokener tokener = new JSONTokener(currencyString);
-        JSONObject jsonCurrency = new JSONObject(tokener);
-
-        System.out.println(jsonCurrency.getJSONObject("data").getDouble("PLN"));
-
-
-    }
-
-    public void exchangeToPln(double amount,double price, String currencyString){
-        JSONTokener tokener = new JSONTokener(currencyString);
-        JSONObject jsonCurrency = new JSONObject(tokener);
-        double currentValue = jsonCurrency.getJSONObject("data").getDouble("PLN");
-        if ((amount * price) > (amount * currentValue)){
-            System.out.println("This is not the right moment to sell the usd, the current value of pln is: "  + currentValue  );
-        }else{
-            System.out.println("This is the best moment to sell USD and buy PLN, current PLN value is: " + currentValue);
-        }
-    }
-
-
-    public void exchangeToPlnDate(String date, double amount){
-
     }
 }

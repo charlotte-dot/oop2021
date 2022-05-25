@@ -227,20 +227,5 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        try {
-            connector.getCurrency(connector.getCurrencyData());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        /**
-         * Task12
-         */
-        try {
-
-            connector.exchangeToPln(2000.0, 4.25, connector.getCurrencyData());
-        } catch (Exception e) {
-            e.getMessage();
-        }
     }
 }
