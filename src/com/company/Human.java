@@ -13,7 +13,7 @@ public class Human extends Animal {
     private Double salary;
 
     Human(Double salary) {
-        super(HUMAN_SPECIE);
+        super(HUMAN_SPECIE,FoodType.ALL);
         this.setSalary(salary);
     }
 
